@@ -1,0 +1,19 @@
+{
+    "name": "flykode/reportpdf",
+    "description": "A Data based PHP Report Library",
+    "license": "MIT",
+    "keywords": ["php","report","pdfreport","pdf","fpdf"],
+    "authors": [
+        {
+            "name": "Allan Freitas",
+            "email": "allankode@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Flykode\\ReportPDF\\": "src"
+        }
+    }
+}
