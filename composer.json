@@ -9,7 +9,9 @@
             "email": "allankode@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "flykode/fpdf": "v0.0.1"
+    },
     "require-dev": {},
     "autoload": {
         "psr-4": {
