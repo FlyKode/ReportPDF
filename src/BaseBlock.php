@@ -15,8 +15,6 @@ class BaseBlock {
     public function setBlockData(array $blockData)
     {
         $this->blockData = $blockData;
-
-        return $this;
     }
 
     public function getBlockData()
