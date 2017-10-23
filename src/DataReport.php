@@ -7,7 +7,7 @@ class DataReport extends BaseReport {
     public $imgLogo;
 
     public $imgLogoWidth = 20;
-    public $imgLogoFullPath = '';
+    public $imgLogoPath = '';
 
     public $Title;
 
@@ -18,19 +18,25 @@ class DataReport extends BaseReport {
     public $HeaderBorder;
 
     public $hasDate;
-    public $hasDateText = 'Emissão: ';
+    public $hasDateText = 'Generated in: ';
     public $hasDateFormat = 'd/m/Y';
 
     public $hasPageNum;
     public $hasPageNumLastPag = 0;
-    public $hasPageNumText = 'Página : ';
+    public $hasPageNumText = 'Page : ';
 
     public $TopMargin;
 
     public $HasDefaultHeader = true;
 
     public $DisplayPreferences = '';
-      
+    
+    public function getImgLogoFullPath(){
+
+        $cleanPath = rtrim($this->imgLogoPath, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
+
+        return $cleanPath.$this->imgLogo;
+    }
       
     public function DisplayPreferences($preferences) {
 
@@ -88,11 +94,11 @@ class DataReport extends BaseReport {
         if ($this->HasDefaultHeader == true){
 
             //Logo
-            if (trim($this->imgLogoFullPath) == ''){
-                throw new ReportPdfException('The $imgLogoFullPath variable must be a full path to the image');
+            if (trim($this->imgLogoPath) == ''){
+                throw new ReportPdfException('The $imgLogoPath variable must be a full path to the image');
             }
 
-            $this->Image(public_path('images/'.$this->imgLogo),11,5.5+$offset,$this->imgLogoWidth);
+            $this->Image($this->getImgLogoFullPath(),11,5.5+$offset,$this->imgLogoWidth);
 
             $this->SetFont('Arial','B',11);
 
@@ -159,7 +165,7 @@ class DataReport extends BaseReport {
                 if($this->hasPageNumLastPag >= 0 && $this->hasPageNumLastPag < $this->PageNo())
                     $pageNumCellText = '';
 
-                $this->Cell(0,0, $pageNumCellText,0,0,'R');
+                $this->Cell(0,7, $pageNumCellText,0,0,'R');
             }
 
             if ($this->hasDate)
