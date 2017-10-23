@@ -11,4 +11,17 @@
 
 A Data based PHP Report Library
 
-## Warning: This code is not tested yet, I'm just importing my actual library.
+## Examples
+
+There is a example .php on the /examples folder.
+Check this files:
+
+- [examples/simple-report.php](examples/simple-report.php)
+- [examples/mybirthdaylist.pdf](examples/mybirthdaylist.pdf)
+
+### Image of the generated pdf
+<p align="center">
+  <img src="https://raw.githubusercontent.com/FlyKode/ReportPDF/master/examples/flykode_reportpdf_example_001.png"></p>
+
+
+## Note: I already use this package in production environments.
