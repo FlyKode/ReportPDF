@@ -11,6 +11,12 @@
 
 A Data based PHP Report Library
 
+## Adding to your project
+Run the command below on your project folder to include it on your composer.json
+```bash
+composer require flykode/reportpdf
+```
+
 ## Examples
 
 There is a example .php on the /examples folder.
